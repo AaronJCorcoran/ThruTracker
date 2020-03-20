@@ -1,0 +1,236 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="3970917748" file="D:\Google Drive\thruTracker\thruTracker.prj" location="D:\Google Drive\thruTracker" name="thruTracker" preferred-package-location="D:\Google Drive\thruTracker\thruTracker\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>ThruTracker1_6_1</param.appname>
+    <param.icon>${PROJECT_ROOT}\thruTracker_resources\icon.ico</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\thruTracker_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\thruTracker_resources\icon_32.png</file>
+      <file>${PROJECT_ROOT}\thruTracker_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\thruTracker_resources\icon_16.png</file>
+    </param.icons>
+    <param.version>1.6.1</param.version>
+    <param.authnamewatermark>Aaron Corcoran and Tyson Hedrick</param.authnamewatermark>
+    <param.email>acorcora@uccs.edu</param.email>
+    <param.company>UC Colorado Springs</param.company>
+    <param.summary>Software for 2-D and 3-D video-based animal tracking. For more info go to www.sonarjamming.com/thrutracker</param.summary>
+    <param.description />
+    <param.screenshot>${PROJECT_ROOT}\ThruTracker_Icon.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>\thruTracker1_6</param.installpath.string>
+    <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
+    <param.logo />
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\thruTracker\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\thruTracker\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\thruTracker\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\thruTracker</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>false</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text>Syntax 
+	  -? 
+	 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 input arguments</param.help.text>
+    <unset>
+      <param.description />
+      <param.guid />
+      <param.installpath.combo />
+      <param.logo />
+      <param.install.notes />
+      <param.target.install.notes />
+      <param.intermediate />
+      <param.files.only />
+      <param.output />
+      <param.logdir />
+      <param.enable.clean.build />
+      <param.user.defined.mcr.options />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.web.mcr.name />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.create.log />
+      <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\thruTracker.mlapp</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\easyWand6.m</file>
+      <file>${PROJECT_ROOT}\Scripts\tform.m</file>
+      <file>${PROJECT_ROOT}\Scripts\undistort_Tform.m</file>
+    </fileset.resources>
+    <fileset.package>
+      <file>${PROJECT_ROOT}\opts_data.m</file>
+      <file>${PROJECT_ROOT}\ThruTracker Example Data</file>
+    </fileset.package>
+    <fileset.depfun>
+      <file>B:\Projects\HedrickApps\Apps\DigitizingTools\dlt_computeCoefficients.m</file>
+      <file>B:\Projects\HedrickApps\Apps\DigitizingTools\dlt_inverse.m</file>
+      <file>B:\Projects\HedrickApps\Apps\DigitizingTools\dlt_reconstruct.m</file>
+      <file>B:\Projects\HedrickApps\Apps\DLTtools\invdlt.m</file>
+      <file>B:\Projects\HedrickApps\Apps\DLTtools\partialdlt.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\easySBA.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\easySBA_mex.mexw64</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_alphas.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_constraint_distance_2param_6eq_3unk.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_constraint_distance_3param_6eq_6unk.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_constraint_distance_orthog_4param_9eq_10unk.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_M_ver2.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_norm_sign_scaling_factor.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_permutation_constraint4.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\define_control_points.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\define_distances_btw_control_points.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\efficient_pnp.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\EPnP.m</file>
+      <file>B:\Projects\HedrickApps\Apps\easyWand5\private\kernel_noise.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swallows2015\birdDerivatives_v1.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swallows2015\clusterBirdsJ_v1.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swallows2015\tileAssign_v5.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swifts2014\dlt_reconstruct_fast.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swifts2014\full2sp.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swifts2014\rrmse.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swifts2014\sp2full.m</file>
+      <file>B:\Projects\HedrickApps\Apps\Swifts2014\sparseRead.m</file>
+      <file>B:\Projects\HedrickApps\Apps\wandAutoCalibration\binarycombinations.m</file>
+      <file>B:\Projects\HedrickApps\Scripts\Package1\applyTform.m</file>
+      <file>B:\Projects\HedrickApps\Scripts\Package1\splineDerivative2.m</file>
+      <file>B:\Projects\HedrickApps\Scripts\tybutter.m</file>
+      <file>B:\Projects\WindTurbines\ThruTracker\Scripts\assignmentoptimal.m</file>
+      <file>B:\Projects\WindTurbines\ThruTracker\Scripts\birdJoin3D_v1.m</file>
+      <file>${PROJECT_ROOT}\+fcns\assignmentoptimal.m</file>
+      <file>${PROJECT_ROOT}\+fcns\BatDetect_v1_2.m</file>
+      <file>${PROJECT_ROOT}\+fcns\getFrameSub.m</file>
+      <file>${PROJECT_ROOT}\+fcns\getTurbineEdge.m</file>
+      <file>${PROJECT_ROOT}\+fcns\getTurbineNN.m</file>
+      <file>${PROJECT_ROOT}\+fcns\getTurbineShim.m</file>
+      <file>${PROJECT_ROOT}\+fcns\Join2D_v1.m</file>
+      <file>${PROJECT_ROOT}\+fcns\opflow_detect.m</file>
+      <file>${PROJECT_ROOT}\+fcns\opflow_par_shim.m</file>
+      <file>${PROJECT_ROOT}\+fcns\out_to_uvdata.m</file>
+      <file>${PROJECT_ROOT}\+fcns\rnorm.m</file>
+      <file>${PROJECT_ROOT}\+fcns\tileAssignXY_v1.m</file>
+      <file>${PROJECT_ROOT}\+fcns\TrackCalcs.m</file>
+      <file>${PROJECT_ROOT}\+fcns\UVto3D_v1.m</file>
+      <file>${PROJECT_ROOT}\opts_3D.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\angleaxisRotation.m</file>
+      <file>${PROJECT_ROOT}\Scripts\batCell_lookup_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\batVis_gui_v3_2019b.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\bladeInt.m</file>
+      <file>${PROJECT_ROOT}\Scripts\bladeInt_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ChooseTracks.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\circPts.m</file>
+      <file>${PROJECT_ROOT}\Scripts\citrack_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\collectBirds_v15.m</file>
+      <file>${PROJECT_ROOT}\Scripts\create_Tforms.m</file>
+      <file>${PROJECT_ROOT}\Scripts\createTurbineModel.m</file>
+      <file>${PROJECT_ROOT}\Scripts\distinguishable_colors.m</file>
+      <file>${PROJECT_ROOT}\Scripts\getAlt_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\getCF_v3.m</file>
+      <file>${PROJECT_ROOT}\Scripts\getGS_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\getTL_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\importLog_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\makeBatCell_v3.m</file>
+      <file>${PROJECT_ROOT}\Scripts\measPolyLine_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\opts_app.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\radCurve.m</file>
+      <file>${PROJECT_ROOT}\Scripts\rnorm.m</file>
+      <file>${PROJECT_ROOT}\Scripts\simpleWand.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\splineDerivativeKE2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\splineinterp_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\splitClickedPts_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\centerOfSquares1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\centerOfSquaresShim.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\minboundparallelogram.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\p_poly_dist.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\reorderCentroids.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\thermal2BWimages.m</file>
+      <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\ThermalCamCalibator2.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\trackSummary_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\trimTrack_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\TurbineAdvancedSettings.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\turbineModel_v3.mat</file>
+      <file>${PROJECT_ROOT}\Scripts\turn_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\UVto3D_v4ajc.m</file>
+      <file>${PROJECT_ROOT}\TurbineNetwork2.mat</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="ThruTracker1_6_1.exe" optional="false">D:\Google Drive\thruTracker\thruTracker\for_testing\ThruTracker1_6_1.exe</file>
+      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="splash.png" optional="false">D:\Google Drive\thruTracker\thruTracker\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="readme.txt" optional="true">D:\Google Drive\thruTracker\thruTracker\for_testing\readme.txt</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2019b</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
