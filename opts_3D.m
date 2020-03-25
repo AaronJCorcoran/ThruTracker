@@ -1,5 +1,6 @@
 % birdUVto3D_v2 options file (also works with later birdUVto3D_ versions)
 % Test notes for GitHub Testing
+% Second change, adding notes for change
 opts.dataDir=fileparts(mfilename('fullpath'));
 opts.distCoefsFile={'../Calibrations/Cam1-Cam4_Calibration07092015_cam1Tforms.mat', ...
                     '../Calibrations/Cam1-Cam4_Calibration07092015_cam2Tforms.mat'};
