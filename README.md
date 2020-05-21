@@ -1,5 +1,5 @@
 # ThruTracker
-2D and 3D Tracking Software Developed by Dr. Aaron Corcoran and Dr. Tyson Hedrick
+2D and 3D Tracking Software Developed by Aaron Corcoran Will Valentine and Tyson Hedrick
 Contact: Aaron Corcoran, acorcora@uccs.edu
 For tutorials and additional information: www.sonarjamming.com/thrutracker
 
