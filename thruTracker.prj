@@ -1,6 +1,6 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="3970917748" file="D:\Google Drive\thruTracker\thruTracker.prj" location="D:\Google Drive\thruTracker" name="thruTracker" preferred-package-location="D:\Google Drive\thruTracker\thruTracker\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
-    <param.appname>ThruTracker1_6_1</param.appname>
+  <configuration build-checksum="1848796850" file="S:\Projects\ThruTracker\thruTracker.prj" location="S:\Projects\ThruTracker" name="thruTracker" preferred-package-location="S:\Projects\ThruTracker\thruTracker\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>ThruTracker1_8_9</param.appname>
     <param.icon>${PROJECT_ROOT}\thruTracker_resources\icon.ico</param.icon>
     <param.icons>
       <file>${PROJECT_ROOT}\thruTracker_resources\icon_48.png</file>
@@ -8,15 +8,15 @@
       <file>${PROJECT_ROOT}\thruTracker_resources\icon_24.png</file>
       <file>${PROJECT_ROOT}\thruTracker_resources\icon_16.png</file>
     </param.icons>
-    <param.version>1.6.1</param.version>
+    <param.version>1.8.9</param.version>
     <param.authnamewatermark>Aaron Corcoran and Tyson Hedrick</param.authnamewatermark>
     <param.email>acorcora@uccs.edu</param.email>
     <param.company>UC Colorado Springs</param.company>
     <param.summary>Software for 2-D and 3-D video-based animal tracking. For more info go to www.sonarjamming.com/thrutracker</param.summary>
     <param.description />
-    <param.screenshot>${PROJECT_ROOT}\ThruTracker_Icon.png</param.screenshot>
+    <param.screenshot>${PROJECT_ROOT}\GrayBatScreenShot.png</param.screenshot>
     <param.guid />
-    <param.installpath.string>\thruTracker1_6</param.installpath.string>
+    <param.installpath.string>\ThruTracker1_8_9</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
     <param.logo />
     <param.install.notes />
@@ -28,7 +28,9 @@
     <param.enable.clean.build>false</param.enable.clean.build>
     <param.user.defined.mcr.options />
     <param.target.type>subtarget.standalone</param.target.type>
-    <param.support.packages />
+    <param.support.packages>
+      <item>&lt;package displayname="Deploy Imported Models for TensorFlow-Keras Deep Learning Toolbox Importer" enabled="true" name="Deep Learning Toolbox Importer for TensorFlow-Keras Models" product="Deep Learning Toolbox"/&gt;</item>
+    </param.support.packages>
     <param.web.mcr>true</param.web.mcr>
     <param.package.mcr>false</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
@@ -48,6 +50,9 @@
 	 -?  print help on how to use the application 
 	 input arguments</param.help.text>
     <unset>
+      <param.authnamewatermark />
+      <param.email />
+      <param.company />
       <param.description />
       <param.guid />
       <param.installpath.combo />
@@ -61,7 +66,6 @@
       <param.enable.clean.build />
       <param.user.defined.mcr.options />
       <param.target.type />
-      <param.support.packages />
       <param.web.mcr />
       <param.package.mcr />
       <param.no.mcr />
@@ -83,15 +87,12 @@
       <file>${PROJECT_ROOT}\Scripts\undistort_Tform.m</file>
     </fileset.resources>
     <fileset.package>
+      <file>${PROJECT_ROOT}\Example Data\BatExit.mp4</file>
       <file>${PROJECT_ROOT}\opts_data.m</file>
+      <file>${PROJECT_ROOT}\opts_list.mat</file>
       <file>${PROJECT_ROOT}\ThruTracker Example Data</file>
     </fileset.package>
     <fileset.depfun>
-      <file>B:\Projects\HedrickApps\Apps\DigitizingTools\dlt_computeCoefficients.m</file>
-      <file>B:\Projects\HedrickApps\Apps\DigitizingTools\dlt_inverse.m</file>
-      <file>B:\Projects\HedrickApps\Apps\DigitizingTools\dlt_reconstruct.m</file>
-      <file>B:\Projects\HedrickApps\Apps\DLTtools\invdlt.m</file>
-      <file>B:\Projects\HedrickApps\Apps\DLTtools\partialdlt.m</file>
       <file>B:\Projects\HedrickApps\Apps\easyWand5\easySBA.m</file>
       <file>B:\Projects\HedrickApps\Apps\easyWand5\easySBA_mex.mexw64</file>
       <file>B:\Projects\HedrickApps\Apps\easyWand5\private\compute_alphas.m</file>
@@ -106,53 +107,67 @@
       <file>B:\Projects\HedrickApps\Apps\easyWand5\private\efficient_pnp.m</file>
       <file>B:\Projects\HedrickApps\Apps\easyWand5\private\EPnP.m</file>
       <file>B:\Projects\HedrickApps\Apps\easyWand5\private\kernel_noise.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swallows2015\birdDerivatives_v1.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swallows2015\clusterBirdsJ_v1.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swallows2015\tileAssign_v5.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swifts2014\dlt_reconstruct_fast.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swifts2014\full2sp.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swifts2014\rrmse.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swifts2014\sp2full.m</file>
-      <file>B:\Projects\HedrickApps\Apps\Swifts2014\sparseRead.m</file>
-      <file>B:\Projects\HedrickApps\Apps\wandAutoCalibration\binarycombinations.m</file>
-      <file>B:\Projects\HedrickApps\Scripts\Package1\applyTform.m</file>
-      <file>B:\Projects\HedrickApps\Scripts\Package1\splineDerivative2.m</file>
-      <file>B:\Projects\HedrickApps\Scripts\tybutter.m</file>
-      <file>B:\Projects\WindTurbines\ThruTracker\Scripts\assignmentoptimal.m</file>
-      <file>B:\Projects\WindTurbines\ThruTracker\Scripts\birdJoin3D_v1.m</file>
+      <file>S:\Projects\HedrickApps\Apps\DigitizingTools\dlt_computeCoefficients.m</file>
+      <file>S:\Projects\HedrickApps\Apps\DigitizingTools\dlt_inverse.m</file>
+      <file>S:\Projects\HedrickApps\Apps\DigitizingTools\dlt_reconstruct.m</file>
+      <file>S:\Projects\HedrickApps\Apps\Swifts2014\dlt_reconstruct_fast.m</file>
+      <file>S:\Projects\HedrickApps\Apps\Swifts2014\full2sp.m</file>
+      <file>S:\Projects\HedrickApps\Apps\Swifts2014\rrmse.m</file>
+      <file>S:\Projects\HedrickApps\Apps\Swifts2014\sp2full.m</file>
+      <file>S:\Projects\HedrickApps\Apps\Swifts2014\sparseRead.m</file>
+      <file>S:\Projects\HedrickApps\Scripts\Package1\applyTform.m</file>
+      <file>S:\Projects\HedrickApps\Scripts\Package1\partialdlt.m</file>
+      <file>S:\Projects\HedrickApps\Scripts\Package1\splineDerivative2.m</file>
+      <file>S:\Projects\HedrickApps\Scripts\tybutter.m</file>
       <file>${PROJECT_ROOT}\+fcns\assignmentoptimal.m</file>
+      <file>${PROJECT_ROOT}\+fcns\BatDetect_par_shim.m</file>
       <file>${PROJECT_ROOT}\+fcns\BatDetect_v1_2.m</file>
       <file>${PROJECT_ROOT}\+fcns\getFrameSub.m</file>
       <file>${PROJECT_ROOT}\+fcns\getTurbineEdge.m</file>
       <file>${PROJECT_ROOT}\+fcns\getTurbineNN.m</file>
       <file>${PROJECT_ROOT}\+fcns\getTurbineShim.m</file>
       <file>${PROJECT_ROOT}\+fcns\Join2D_v1.m</file>
-      <file>${PROJECT_ROOT}\+fcns\opflow_detect.m</file>
-      <file>${PROJECT_ROOT}\+fcns\opflow_par_shim.m</file>
       <file>${PROJECT_ROOT}\+fcns\out_to_uvdata.m</file>
       <file>${PROJECT_ROOT}\+fcns\rnorm.m</file>
       <file>${PROJECT_ROOT}\+fcns\tileAssignXY_v1.m</file>
       <file>${PROJECT_ROOT}\+fcns\TrackCalcs.m</file>
       <file>${PROJECT_ROOT}\+fcns\UVto3D_v1.m</file>
+      <file>${PROJECT_ROOT}\Binary_gray_4th_round_20200218.mat</file>
       <file>${PROJECT_ROOT}\opts_3D.mlapp</file>
+      <file>${PROJECT_ROOT}\opts_list.mat</file>
       <file>${PROJECT_ROOT}\Scripts\angleaxisRotation.m</file>
+      <file>${PROJECT_ROOT}\Scripts\assignmentoptimal.m</file>
+      <file>${PROJECT_ROOT}\Scripts\backgroundSubtractor.m</file>
+      <file>${PROJECT_ROOT}\Scripts\backgroundSubtractorOCV.mexw64</file>
       <file>${PROJECT_ROOT}\Scripts\batCell_lookup_v2.m</file>
       <file>${PROJECT_ROOT}\Scripts\batVis_gui_v3_2019b.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\binarycombinations.m</file>
+      <file>${PROJECT_ROOT}\Scripts\birdDerivatives_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\birdJoin3D_v1.m</file>
       <file>${PROJECT_ROOT}\Scripts\bladeInt.m</file>
       <file>${PROJECT_ROOT}\Scripts\bladeInt_v2.m</file>
       <file>${PROJECT_ROOT}\Scripts\ChooseTracks.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\cineInfo.m</file>
+      <file>${PROJECT_ROOT}\Scripts\cineRead.m</file>
       <file>${PROJECT_ROOT}\Scripts\circPts.m</file>
       <file>${PROJECT_ROOT}\Scripts\citrack_v2.m</file>
+      <file>${PROJECT_ROOT}\Scripts\clusterBirdsJ_v1.m</file>
       <file>${PROJECT_ROOT}\Scripts\collectBirds_v15.m</file>
+      <file>${PROJECT_ROOT}\Scripts\count_exits.m</file>
+      <file>${PROJECT_ROOT}\Scripts\CountAppDialogue.mlapp</file>
       <file>${PROJECT_ROOT}\Scripts\create_Tforms.m</file>
       <file>${PROJECT_ROOT}\Scripts\createTurbineModel.m</file>
+      <file>${PROJECT_ROOT}\Scripts\crop_image.m</file>
       <file>${PROJECT_ROOT}\Scripts\distinguishable_colors.m</file>
+      <file>${PROJECT_ROOT}\Scripts\DLTtoUVdata.m</file>
       <file>${PROJECT_ROOT}\Scripts\getAlt_v2.m</file>
       <file>${PROJECT_ROOT}\Scripts\getCF_v3.m</file>
       <file>${PROJECT_ROOT}\Scripts\getGS_v2.m</file>
       <file>${PROJECT_ROOT}\Scripts\getTL_v2.m</file>
       <file>${PROJECT_ROOT}\Scripts\importLog_v1.m</file>
+      <file>${PROJECT_ROOT}\Scripts\inrectangle.m</file>
       <file>${PROJECT_ROOT}\Scripts\makeBatCell_v3.m</file>
+      <file>${PROJECT_ROOT}\Scripts\MakeDetectionsVideo.m</file>
       <file>${PROJECT_ROOT}\Scripts\measPolyLine_v1.m</file>
       <file>${PROJECT_ROOT}\Scripts\opts_app.mlapp</file>
       <file>${PROJECT_ROOT}\Scripts\radCurve.m</file>
@@ -168,6 +183,8 @@
       <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\reorderCentroids.m</file>
       <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\thermal2BWimages.m</file>
       <file>${PROJECT_ROOT}\Scripts\ThermalCamCalibrator\ThermalCamCalibator2.mlapp</file>
+      <file>${PROJECT_ROOT}\Scripts\tileAssign_v5.m</file>
+      <file>${PROJECT_ROOT}\Scripts\TrackSelector.mlapp</file>
       <file>${PROJECT_ROOT}\Scripts\trackSummary_v1.m</file>
       <file>${PROJECT_ROOT}\Scripts\trimTrack_v1.m</file>
       <file>${PROJECT_ROOT}\Scripts\TurbineAdvancedSettings.mlapp</file>
@@ -177,18 +194,16 @@
       <file>${PROJECT_ROOT}\TurbineNetwork2.mat</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="ThruTracker1_6_1.exe" optional="false">D:\Google Drive\thruTracker\thruTracker\for_testing\ThruTracker1_6_1.exe</file>
-      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="splash.png" optional="false">D:\Google Drive\thruTracker\thruTracker\for_testing\splash.png</file>
-      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="readme.txt" optional="true">D:\Google Drive\thruTracker\thruTracker\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="splash.png" optional="false">S:\Projects\ThruTracker\thruTracker\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="ThruTracker1_8_9.exe" optional="false">S:\Projects\ThruTracker\thruTracker\for_testing\ThruTracker1_8_9.exe</file>
+      <file location="${PROJECT_ROOT}\thruTracker\for_testing" name="readme.txt" optional="true">S:\Projects\ThruTracker\thruTracker\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB\R2019b</root>
+      <root>C:\Program Files\MATLAB\R2020b</root>
       <toolboxes>
         <toolbox name="matlabcoder" />
         <toolbox name="gpucoder" />
-        <toolbox name="fixedpoint" />
-        <toolbox name="matlabhdlcoder" />
         <toolbox name="neuralnetwork" />
       </toolboxes>
       <toolbox>
@@ -200,16 +215,6 @@
         <gpucoder>
           <enabled>true</enabled>
         </gpucoder>
-      </toolbox>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
-      </toolbox>
-      <toolbox>
-        <matlabhdlcoder>
-          <enabled>true</enabled>
-        </matlabhdlcoder>
       </toolbox>
       <toolbox>
         <neuralnetwork>
