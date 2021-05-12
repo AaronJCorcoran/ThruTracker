@@ -1,25 +1,26 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="B:\Projects\WindTurbines\BatVis3\Scripts\batVis_gui_v3_2019b.prj" location="B:\Projects\WindTurbines\BatVis3\Scripts" name="batVis_gui_v3_2019b" target="target.ezdeploy.standalone" target-name="Application Compiler">
-    <param.appname>batVis_gui_v3_2019b</param.appname>
+  <configuration file="S:\Projects\ThruTracker\Scripts\TrackSelector.prj" location="S:\Projects\ThruTracker\Scripts" name="TrackSelector" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>TrackSelector</param.appname>
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
-    <param.authnamewatermark />
-    <param.email />
-    <param.company />
-    <param.summary />
+    <param.authnamewatermark>Dr. Aaron Corcoran</param.authnamewatermark>
+    <param.email>acorcora@uccs.edu</param.email>
+    <param.company>UC Colorado Springs</param.company>
+    <param.summary>App for displaying and classifying tracks made using ThruTracker. For more information:
+www.sonarjamming.com/thrutracker</param.summary>
     <param.description />
     <param.screenshot />
     <param.guid />
-    <param.installpath.string>\batVis_gui_v3_2019b\</param.installpath.string>
+    <param.installpath.string>\UC Colorado Springs\TrackSelector\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
     <param.logo />
     <param.install.notes />
     <param.target.install.notes />
-    <param.intermediate>${PROJECT_ROOT}\batVis_gui_v3_2019b\for_testing</param.intermediate>
-    <param.files.only>${PROJECT_ROOT}\batVis_gui_v3_2019b\for_redistribution_files_only</param.files.only>
-    <param.output>${PROJECT_ROOT}\batVis_gui_v3_2019b\for_redistribution</param.output>
-    <param.logdir>${PROJECT_ROOT}\batVis_gui_v3_2019b</param.logdir>
+    <param.intermediate>${PROJECT_ROOT}\TrackSelector\for_testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\TrackSelector\for_redistribution_files_only</param.files.only>
+    <param.output>${PROJECT_ROOT}\TrackSelector\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\TrackSelector</param.logdir>
     <param.enable.clean.build>false</param.enable.clean.build>
     <param.user.defined.mcr.options />
     <param.target.type>subtarget.standalone</param.target.type>
@@ -36,15 +37,16 @@
     <param.native.matlab>false</param.native.matlab>
     <param.checkbox>false</param.checkbox>
     <param.example />
-    <param.help.text />
+    <param.help.text>Syntax 
+	  -? 
+	 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 input arguments</param.help.text>
     <unset>
       <param.icon />
       <param.icons />
       <param.version />
-      <param.authnamewatermark />
-      <param.email />
-      <param.company />
-      <param.summary />
       <param.description />
       <param.screenshot />
       <param.guid />
@@ -73,30 +75,35 @@
       <param.native.matlab />
       <param.checkbox />
       <param.example />
-      <param.help.text />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}\batVis_gui_v3_2019b.mlapp</file>
+      <file>${PROJECT_ROOT}\TrackSelector.mlapp</file>
     </fileset.main>
     <fileset.resources />
     <fileset.package />
     <fileset.depfun />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\batVis_gui_v3_2019b\for_testing" name="batVis_gui_v3_2019b.exe" optional="false">B:\Projects\WindTurbines\BatVis3\Scripts\batVis_gui_v3_2019b\for_testing\batVis_gui_v3_2019b.exe</file>
-      <file location="${PROJECT_ROOT}\batVis_gui_v3_2019b\for_testing" name="readme.txt" optional="true">B:\Projects\WindTurbines\BatVis3\Scripts\batVis_gui_v3_2019b\for_testing\readme.txt</file>
-      <file location="${PROJECT_ROOT}\batVis_gui_v3_2019b\for_testing" name="splash.png" optional="false">B:\Projects\WindTurbines\BatVis3\Scripts\batVis_gui_v3_2019b\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\TrackSelector\for_testing" name="splash.png" optional="false">S:\Projects\ThruTracker\Scripts\TrackSelector\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\TrackSelector\for_testing" name="readme.txt" optional="true">S:\Projects\ThruTracker\Scripts\TrackSelector\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\TrackSelector\for_testing" name="TrackSelector.exe" optional="false">S:\Projects\ThruTracker\Scripts\TrackSelector\for_testing\TrackSelector.exe</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB\R2019b</root>
+      <root>C:\Program Files\MATLAB\R2020b</root>
       <toolboxes>
         <toolbox name="matlabcoder" />
+        <toolbox name="gpucoder" />
         <toolbox name="neuralnetwork" />
       </toolboxes>
       <toolbox>
         <matlabcoder>
           <enabled>true</enabled>
         </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
       </toolbox>
       <toolbox>
         <neuralnetwork>

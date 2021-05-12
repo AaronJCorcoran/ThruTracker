@@ -138,12 +138,15 @@ end
 % Fix frame numbers given offsets & the python-matlab 0 vs 1 base numbering
 for i=1:dets.numCams
   if isempty(dets.uvData{i})==false
-    dets.uvData{i}(:,1)=dets.uvData{i}(:,1) - opts.offsets(i);
+      if numel(opts.offsets) < i
+          opts.offsets(i) = 0;
+      end
+      dets.uvData{i}(:,1)=dets.uvData{i}(:,1) - opts.offsets(i);
   end
 end
 %
 % Flip vertical coordinate to put origin in lower left of image
-for i=1:dets.numCams
+for i=1:numel(dets.uvData)
   if isempty(dets.uvData{i})==false
     %Try not flipping
       %dets.uvData{i}(:,3)=abs(dets.uvData{i}(:,3)-opts.imageSize{i}(2));
@@ -201,7 +204,7 @@ for j=1:dets.numCams
     idx2=find(vals<=i);
     %idx3=find(vals==i+1); was used as idx(idx3),[2:4])
     try
-      dets.uvData2{i}{j}=dets.uvData{j}(idx(idx2(end))+1:idx(vals==i+1),[2:4]);
+      dets.uvData2{i}{j}=dets.uvData{j}(idx(idx2(end))+1:idx(vals==i+1),[2:end]);
     catch
       dets.uvData2{i}{j}=zeros(0,3);
     end
@@ -221,10 +224,13 @@ for i=opts.startFrame:opts.endFrame
   dets.uvData2{i}{j}=flipud(sortrows(dets.uvData2{i}{j},3));
   
   % keep only up to maxBirds detections
-  for j=1:dets.numCams
-    if dets.nDetect(i,j)>opts.maxBirdsToTrack
-      dets.uvData2{i}{j}=dets.uvData2{i}{j}(1:opts.maxBirdsToTrack,:);
-    end
+  
+  if isfield(opts,'maxBirdsToTrack');
+      for j=1:dets.numCams
+        if dets.nDetect(i,j)>opts.maxBirdsToTrack
+          dets.uvData2{i}{j}=dets.uvData2{i}{j}(1:opts.maxBirdsToTrack,:);
+        end
+      end
   end
 end
 
@@ -273,6 +279,9 @@ disp('XYZ points extracted')
 
 % reset startFrame if necessary
 idx=find(dets.nXYZ>0);
+if ~isfield(opts,'startFrame')
+    opts.startFrame = 1;
+end
 opts.startFrame=max([idx(1),opts.startFrame]);
 
 % debug
