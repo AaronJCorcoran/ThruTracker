@@ -12,6 +12,7 @@ function [assignments,unassignedTracks,unassignedDetections] = tileAssignXY_v1(x
 % Modified by Aaron Corcoran on 09-01-2019 to work with only xy if xyz is not provided
 % Added fooXYd as input variable: current speed of each track
 % initialize assignments
+xy = double(xy);
 assignments=zeros(0,3);
 
 if opts.tileAssignments==true

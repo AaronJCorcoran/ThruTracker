@@ -1,8 +1,14 @@
 function [frame_sub, turbine_pixels,clouds] = getFrameSub(frame, last_frame, opts, se3)
     
         % get the difference between this frame and the previous one
-        frame_sub = frame - last_frame;     
-        % Find turbine by converting image to foreground and
+        try
+            frame_sub = frame - last_frame;     
+        catch
+            %Frames likely different sizes
+            frame_sub = [];
+            return
+        end
+            % Find turbine by converting image to foreground and
         % background
         foreground = frame>60;             % Fixed threshold is intentionally low to get turbine blades at odd angles
 

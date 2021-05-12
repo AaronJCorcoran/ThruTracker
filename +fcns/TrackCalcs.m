@@ -38,12 +38,14 @@ for i = 1:length(tracks)
         idx = find(uvDatasum==track_sum(j),1);
 
         %Save area and brightness information for each 2D detection
-        this_areas(j) = dets.uvData{1}(idx,4);
-        this_brights(j) = dets.uvData{1}(idx,5);
+        if ~isempty(idx)    %There was a wierd error where occasionally it was not finding the detection
+            this_areas(j) = dets.uvData{1}(idx,4);
+            %this_brights(j) = dets.uvData{1}(idx,5);
+        end
     end
     % Take averages of area and brightness values
-    track_area(i) = mean(this_areas);
-    track_brightness(i) = mean(this_brights);
+    track_area(i) = nanmean(this_areas);
+    %track_brightness(i) = nanmean(this_brights);
     
     %Calculate track flight parameters
     XY = tracks{i}(:,2:3);
@@ -61,16 +63,16 @@ for i = 1:length(tracks)
     track_movement(i) = end_length / (tracks{i}(end,1) - tracks{i}(1,1));
 end
 
-data_table = table( (1:length(tracks))' ,start_frame,end_frame,dets.trackID,track_area,track_brightness,track_speed,track_movement,sinuosity);
+data_table = table( (1:length(tracks))' ,start_frame,end_frame,dets.trackID,track_area,track_speed,track_movement,sinuosity);
 data_table.Properties.VariableNames{1} = 'Track_Number';
 data_table.Properties.VariableNames{2} = 'Start_frame';
 data_table.Properties.VariableNames{3} = 'End_frame';
 data_table.Properties.VariableNames{4} = 'Classification';
 data_table.Properties.VariableNames{5} = 'Mean_pixels';
-data_table.Properties.VariableNames{6} = 'Mean_brightness';
-data_table.Properties.VariableNames{7} = 'Pixel_speed';
-data_table.Properties.VariableNames{8} = 'Net_Movement_speed';
-data_table.Properties.VariableNames{9} = 'Sinuosity';
+%data_table.Properties.VariableNames{6} = 'Mean_brightness';
+data_table.Properties.VariableNames{6} = 'Pixel_speed';
+data_table.Properties.VariableNames{7} = 'Net_Movement_speed';
+data_table.Properties.VariableNames{8} = 'Sinuosity';
 
 %new_IDs = zeros(size(app.dets.trackID));
 %idx = find(sinuosity> 0.8 & track_movement > 2);

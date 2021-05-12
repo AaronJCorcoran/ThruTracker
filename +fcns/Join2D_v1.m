@@ -61,7 +61,7 @@ Xxy=foo.State;
 % initialization
 frame=opts.startFrame; % first frame
 numFrames=opts.endFrame-opts.startFrame-1; % number of frames to process
-xy=dets.xypts{frame}(:,:);
+xy=double(dets.xypts{frame}(:,:));
 while isempty(xy)
      frame = frame +1;
      if frame > length(dets.xypts)
@@ -69,7 +69,7 @@ while isempty(xy)
      end
      numFrames = numFrames-1;
      xy=dets.xypts{frame}(:,:);     %NEED TO CONVERT UVDATA TO XY FORMAT
-
+    xy = double(xy);
 end
 xyz = zeros(size(xy,1),size(xy,2)*2);
 %tBlock = size(xy,2) + 3;            % size of an xy track array = 3 for dummy xyz
@@ -79,6 +79,7 @@ tBlock=size(xyz,2)+size(xy,2); % size of an [xyz,xy] track array
 % setup output arrays
 out(frame,:)=reshape([xyz,xy]',1,numel([xyz,xy]));
 out(frame+1:frame+numFrames,:)=0;
+out = double(out);      %
 out=sparse(out);
 
 % setup storage cell array to avoid having main storage arrays grow too

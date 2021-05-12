@@ -198,11 +198,11 @@ for j = 1:dets.numCams
         vals=dets.uvData{j}(idx,1); % value it is changing from
         idx = [0; idx];
         for i = 1:length(idx)-1
-            dets.uvData2{vals(i)}{j} = dets.uvData{j}(idx(i)+1:idx(i+1),2:3);
+            dets.uvData2{vals(i)}{j} = dets.uvData{j}(idx(i)+1:idx(i+1),2:4);
         end
        
         if ~isempty(vals)
-            dets.uvData2{vals(end)}{j} = dets.uvData{j}(idx(end)+1:end,2:3);  %Save last set of detections
+            dets.uvData2{vals(end)}{j} = dets.uvData{j}(idx(end)+1:end,2:4);  %Save last set of detections
         end
         % Now add empty values for frames without data
         for i = opts.startFrame:length(dets.uvData2)
@@ -226,9 +226,11 @@ for i=opts.startFrame:opts.endFrame
   
   % keep only up to maxBirds detections
   for j=1:dets.numCams
-    if dets.nDetect(i,j)>opts.maxBirdsToTrack
-      dets.uvData2{i}{j}=dets.uvData2{i}{j}(1:opts.maxBirdsToTrack,:);
-    end
+      if isfield(opts,'maxBirdsToTrack')
+        if dets.nDetect(i,j)>opts.maxBirdsToTrack
+          dets.uvData2{i}{j}=dets.uvData2{i}{j}(1:opts.maxBirdsToTrack,:);
+        end
+      end
   end
 end
 
@@ -266,7 +268,11 @@ tic
 xypts = cell(1,length(dets.uvData2));
 uvData2 = dets.uvData2;
 for i = opts.startFrame:length(uvData2)
-        xypts{i} = uvData2{i}{1};
+    try
+        xypts{i} = uvData2{i}{1}(:,1:2);
+    catch
+        1;
+    end
 end
 dets.xypts = xypts;
 clear uvData2 xypts;

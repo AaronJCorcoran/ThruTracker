@@ -1,4 +1,4 @@
-function [uvdata, clouds] = BatDetect_par_shim(vid,opts, app)
+function [uvdata] = BatDetect_par_shim(vid,opts, app)
 threads = opts.threads;
 
 % Get number of frames
@@ -24,7 +24,7 @@ end
 
 %Setup and run in parallel
 uvdata_thread = {};
-clouds_thread = {};
+%clouds_thread = {};
 tic
 
 %for i = 1:threads
@@ -33,21 +33,22 @@ tic
 pseudo_app.se1 = app.se1;
 pseudo_app.se3 = app.se3;
 pseudo_app.seBuffer = app.seBuffer;
-pseuod_app.net = app.net;
+pseudo_app.net = app.net;
 for i = 1:threads
     thread_list{i} = i;
 end
 parfor(i = 1:threads,threads)
 %for i = 1:threads
-   [uvdata_thread{i}, clouds_thread{i}] = fcns.opflow_detect(vidpar{i},opts_thread{i},pseudo_app, thread_list{i});
+   %[uvdata_thread{i}] = fcns.opflow_detect(vidpar{i},opts_thread{i},pseudo_app, thread_list{i});
+   [uvdata_thread{i}] = fcns.BatDetect_v1_2(vidpar{i},pseudo_app,opts_thread{i});  
 end
 
 toc
 uvdata = [];
-clouds = [];
+%clouds = [];
 
 % Put the pieces back together
 for i = 1:threads
     uvdata = [uvdata;uvdata_thread{i}];
-    clouds = [clouds; clouds_thread{i}];
+    %clouds = [clouds; clouds_thread{i}];
 end
